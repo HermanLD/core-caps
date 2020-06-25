@@ -1,0 +1,21 @@
+{
+  "name": "core-caps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "del /s /q dist & rmdir /s /q .cache",
+    "start": "parcel src/index.html",
+    "build": "rmdir /s /q dist & parcel build src/index.html"
+  },
+  "keywords": [],
+  "author": "Herman Dardon",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "autoprefixer": "^9.8.4",
+    "parcel-bundler": "^1.12.4",
+    "postcss-modules": "^3.1.0"
+  }
+}
