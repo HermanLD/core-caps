@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "clean": "del /s /q dist & rmdir /s /q .cache",
-    "start": "parcel src/index.html",
-    "build": "rmdir /s /q dist & parcel build src/index.html"
+    "start": "rmdir /s /q .cache & parcel src/index.html --no-source-maps --open" ,
+    "build": "rmdir /s /q .cache & parcel build src/index.html --no-source-maps"
   },
   "keywords": [],
   "author": "Herman Dardon",
@@ -16,6 +15,24 @@
     "@babel/preset-env": "^7.10.3",
     "autoprefixer": "^9.8.4",
     "parcel-bundler": "^1.12.4",
+    "parcel-plugin-custom-dist-structure": "^1.1.13",
+    "parcel-plugin-nuke-dist": "^1.0.1",
     "postcss-modules": "^3.1.0"
+  },
+  "customDistStructure": {
+    "config": {
+      ".js": "js",
+      ".css": "css",
+      "images": [
+        ".jpg",
+        ".png",
+        ".svg"
+      ],
+      ".fileExtension": "folder/in/dist",
+      "folder/in/dist": [ ".file", ".extensions" ]
+    },
+    "options": {
+      "development": true
   }
+}
 }
